@@ -1,6 +1,16 @@
 #+title: readme
 * intro
 hello, this is my repository for a set of projects related to modular synthesis using STM32's. allot of this is inspired by [[https://github.com/pichenettes/eurorack][mutable instruments modules]]
+* repository
+| folder | description                                                                     |
+|--------+---------------------------------------------------------------------------------|
+| doc    | contains relevant hardware documentation, and potential code docs in the future |
+| env    | contains installation shell script and template cmake/makefiles                 |
+| org    | contains org files related to the project                                       |
+| vco    | stm32 based vco, in progress, just like the rest of this repo                   |
+|        |                                                                                 |
+|        |                                                                                 |
+
 * license
 MIT License
 

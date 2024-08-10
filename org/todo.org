@@ -11,10 +11,10 @@
 ** TODO i2s
 ** TODO dma
 ** TODO LXC env
-** TODO blink
-** TODO usart
+** DONE blink
+** DONE usart
 ** TODO debug
-** TODO cmake/makefile
+** DONE cmake/makefile
 ** DONE doom lsp folder include
 *** this was done using bear to create compile_commands.json
 * TODO screen output

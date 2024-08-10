@@ -1,6 +1,10 @@
 #+title: readme
+<<<<<<< HEAD
+hello, this is my repository for a set of projects related to modular synthesis using STM32's. project inspired by [[https://github.com/pichenettes/eurorack][mutable instruments modules]]
+=======
 * intro
 hello, this is my repository for a set of projects related to modular synthesis using STM32's. allot of this is inspired by [[https://github.com/pichenettes/eurorack][mutable instruments modules]]
+>>>>>>> ac83c3e (added readme repo description)
 * repository
 | folder | description                                                                     |
 |--------+---------------------------------------------------------------------------------|

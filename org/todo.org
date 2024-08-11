@@ -1,19 +1,19 @@
 #+title: Todo
-* TODO gitHub
-** TODO readme
+* DONE gitHub
+** DONE readme
 * TODO dev environment
-** TODO libraries
-*** TODO cmsis dsp
-*** TODO hal
+** TODO LXC env
+** DONE libraries
+*** DONE cmsis dsp
+*** DONE hal
 * TODO testProj
-** TODO i2c
+** HOLD i2c
 ** TODO spi
 ** TODO i2s
 ** TODO dma
-** TODO LXC env
 ** DONE blink
 ** DONE usart
-** TODO debug
+** DONE debug
 ** DONE cmake/makefile
 ** DONE doom lsp folder include
 *** this was done using bear to create compile_commands.json

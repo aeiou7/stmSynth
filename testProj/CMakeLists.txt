@@ -26,7 +26,7 @@ file(GLOB PROJECT_SRCS "${CMAKE_SOURCE_DIR}/../Nokia-LCD5110-HAL/src/*c" "${CMAK
 set(CMSIS_HDRS ${CMAKE_SOURCE_DIR}/../STM32CubeF4/Drivers/CMSIS/Device/ST/${HAL_DEVICE_NAME}/Include ${CMAKE_SOURCE_DIR}/../STM32CubeF4/Drivers/CMSIS/Include)
 
 if(${USE_HAL})
-set(HAL_HDRS ${CMAKE_SOURCE_DIR}/../STM32CubeF4/Drivers/${HAL_DEVICE_NAME}_HAL_Driver/Inc Inc/hal)
+set(HAL_HDRS ${CMAKE_SOURCE_DIR}/../STM32CubeF4/Drivers/${HAL_DEVICE_NAME}_HAL_Driver/Inc Inc)
 file(GLOB HAL_SRCS "${CMAKE_SOURCE_DIR}/../STM32CubeF4/Drivers/${HAL_DEVICE_NAME}_HAL_Driver/Src/*.c")
 endif()
 file(GLOB STARTUP_FILE "${CMAKE_SOURCE_DIR}/Src/*.s")

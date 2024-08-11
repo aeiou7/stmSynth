@@ -22,7 +22,7 @@ set(COMMON_COMPILE_FLAGS  -mcpu=${ARCH} -Os --specs=nosys.specs -Wl,--gc-section
 set(LINK_FLAGS -Wl,-Map=${PROJECT_SOURCE_DIR}/Build/${PROJECT_NAME}.map -static -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group)
 set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-fno-rtti -fno-exceptions") # NO C++ RTTI and exception
 set(CMAKE_ASM_FLAGS ${CMAKE_ASM_FLAGS} "-xassembler-with-cpp")
-file(GLOB PROJECT_SRCS "${CMAKE_SOURCE_DIR}/Src/*.c" "${CMAKE_SOURCE_DIR}/Src/*.cpp" "${CMAKE_SOURCE_DIR}/Src/*.s")
+file(GLOB PROJECT_SRCS "${CMAKE_SOURCE_DIR}/../Nokia-LCD5110-HAL/src/*c" "${CMAKE_SOURCE_DIR}/Src/*.c" "${CMAKE_SOURCE_DIR}/Src/*.cpp" "${CMAKE_SOURCE_DIR}/Src/*.s")
 set(CMSIS_HDRS ${CMAKE_SOURCE_DIR}/../STM32CubeF4/Drivers/CMSIS/Device/ST/${HAL_DEVICE_NAME}/Include ${CMAKE_SOURCE_DIR}/../STM32CubeF4/Drivers/CMSIS/Include)
 
 if(${USE_HAL})
@@ -31,7 +31,7 @@ file(GLOB HAL_SRCS "${CMAKE_SOURCE_DIR}/../STM32CubeF4/Drivers/${HAL_DEVICE_NAME
 endif()
 file(GLOB STARTUP_FILE "${CMAKE_SOURCE_DIR}/Src/*.s")
 file(GLOB LINKER_SCRIPT "${CMAKE_SOURCE_DIR}/Src/*.ld")
-include_directories(/Inc #[[RPOJECT_HDRS]] ${CMSIS_HDRS} $<$<BOOL:${USE_HAL}>:${HAL_HDRS}>)
+include_directories(/Inc ${CMAKE_SOURCE_DIR}/../Nokia-LCD5110-HAL/src/ #[[RPOJECT_HDRS]] ${CMSIS_HDRS} $<$<BOOL:${USE_HAL}>:${HAL_HDRS}>)
 add_executable(${PROJECT_NAME}.elf ${STARTUP_FILE} $<$<BOOL:${USE_HAL}>:${HAL_SRCS}> ${PROJECT_SRCS} )
 set_target_properties(${PROJECT_NAME}.elf PROPERTIES CXX_STANDARD 20)
 target_compile_definitions(${PROJECT_NAME}.elf PUBLIC ${MCU} $<$<BOOL:${USE_HAL}>:USE_HAL_DRIVER>)

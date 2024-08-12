@@ -21,7 +21,6 @@
 #include "main.h"
 #include "stm32f411xe.h"
 #include "stm32f4xx_hal.h"
-#include "nokia5110_LCD.h"
 /** @addtogroup STM32F4xx_HAL_Examples
  * @{
  */
@@ -103,7 +102,6 @@ int main(void) {
 static void SystemClock_Config(void) {
   RCC_ClkInitTypeDef RCC_ClkInitStruct;
   RCC_OscInitTypeDef RCC_OscInitStruct;
-
   /* Enable Power Control clock */
   __HAL_RCC_PWR_CLK_ENABLE();
   /* The voltage scaling allows optimizing the power consumption when the device

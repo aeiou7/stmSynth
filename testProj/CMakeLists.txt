@@ -18,7 +18,8 @@ set(OBJCOPY                     arm-none-eabi-objcopy)
 set(SIZE                        arm-none-eabi-size)
 set(CMAKE_CXX_EXTENSIONS        OFF)
 set(CMAKE_C_EXTENSIONS          OFF)
-set(COMMON_COMPILE_FLAGS  -mcpu=${ARCH} -Os --specs=nosys.specs -Wl,--gc-sections --specs=nano.specs -mfloat-abi=soft -mthumb  -mthumb-interwork -Wall -MMD -MP -fmessage-length=0 -ffunction-sections -fdata-sections -fstack-usage)
+#-mthumb-interwork
+set(COMMON_COMPILE_FLAGS  -mcpu=${ARCH} -Os --specs=nosys.specs -Wl,--gc-sections --specs=nano.specs -mfloat-abi=soft -mthumb  -Wall -MMD -MP -fmessage-length=0 -ffunction-sections -fdata-sections -fstack-usage)
 set(LINK_FLAGS -Wl,-Map=${PROJECT_SOURCE_DIR}/Build/${PROJECT_NAME}.map -static -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group)
 set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-fno-rtti -fno-exceptions") # NO C++ RTTI and exception
 set(CMAKE_ASM_FLAGS ${CMAKE_ASM_FLAGS} "-xassembler-with-cpp")

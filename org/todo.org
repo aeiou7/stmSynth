@@ -35,4 +35,50 @@
 ** TODO buttons
 ** TODO encoders
 * TODO panel designs
+** vco
+** seq
+** filter
+** noise
 * TODO schematics
+
+* IDEA vco
+** wavetables
+wavetable based sound generation, goal is to create smooth interpolation between wave states that is toggleable, to get a smooth or stepped wavemorph.
+*** 2 or 3 dimensions
+maybe make it 2d or 3d wavetables, inspired by 4ms svn or piston honda
+*** cv pos input
+cv input along with attenuator and pot/fader to control wavetable position.
+** pitch and octave switch
+classic pitch pot and octave switch
+*** v/oct input pitch
+cv input for pitch control, utilizing v/oct
+** fm/ringmod/phasemod/sync inputs
+sound modulation options to add for more sound design options, each with associated attenuator on input.
+* IDEA sequencer/pam clone
+the basic idea will be a pams workout where the default mode is a 303 style sequencer. this means that each would be clock output from pams would be 4 outputs, that can all be assigned to waveforms on that clock speed, or be used by the sequencer
+** UI
+*** data knob
+we will use pams clickable encoder design for the main menu operations, maybe i will try two click encoders and replace the back button on the original menu ideas.
+*** oled screen
+oled display that will be like the pam or elektron screens, if i go dual knob i will try to consider some of elektrons flow.
+** accent mode
+accents will now be a whole 303 mode like pitch and time is, cloning the pitch mode to add dynamic movement in the accenting, this mode will also be used for assigning the mod output.
+*** envelops
+this mode allows envelopes to be sent on certain note outputs, these can be configured on the screen with the data entry.
+envelopes can be decay, attack/decay and adsr
+** inputs
+
+** outputs
+each of the 8 channels will have the following outputs that can be assigned to diffrent modes and clock divisions like on pam.
+*** cv1: v/oct
+in default mode this would be a v/oct output for the 303 sequencer,
+*** cv2: accent
+in default mode this would be the 303's accent output, can be used to send static values, slides between accents or envelopes like the mod output.
+*** cv3: mod
+in default mode this would be a new addition to the 303 sequencer, allowing envelopes to be generated and sent, or for it to behave like a second accent
+*** cv4: gate/trig
+in default mode this owuld be the gate/trigger output.
+* IDEA filter
+filter bank inspired by qpas, i want a spicy multi filter!
+* IDEA noie
+noise module utilizing gameboy carts to get random data for noise. noise would be generated from windows of data on the input that can be scanned through like a wavetable, the length of the scan window can be determined, allowing non noise sounds to be synthesized possibly.

@@ -21,6 +21,7 @@
 #include "main.h"
 #include "stm32f411xe.h"
 #include "stm32f4xx_hal.h"
+#include "dac.h"
 /** @addtogroup STM32F4xx_HAL_Examples
  * @{
  */
@@ -70,7 +71,7 @@ int main(void) {
 
   /* Add your application code here
    */
-
+  dacInit(48000);
   /* Infinite loop */
   while (1) {
     HAL_UART_Transmit(&huart2, stringe, 4, TIMEOUT);

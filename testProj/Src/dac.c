@@ -1,10 +1,10 @@
 #include"dac.h"
-#include "stm32f4xx_hal_i2s.h"
+extern UART_HandleTypeDef huart2;
 I2S_HandleTypeDef hi2s2;
 DMA_HandleTypeDef hdma_spi2_tx;
-void dacInit(uint32_t sample_rate, size_t blockSize){
+void dacInit(uint32_t sample_rate){
  dacInitI2S(sample_rate);
- dacInitDMA(blockSize);
+ dacInitDMA();
 }
 
 void dacInitI2S(uint32_t sample_rate){
@@ -104,7 +104,7 @@ void HAL_I2S_MspInit(I2S_HandleTypeDef* hi2s)
     hdma_spi2_tx.Init.PeriphBurst = DMA_PBURST_SINGLE;
     if (HAL_DMA_Init(&hdma_spi2_tx) != HAL_OK)
     {
-      Error_Handler();
+      //Error_Handler();
     }
 
     __HAL_LINKDMA(hi2s,hdmatx,hdma_spi2_tx);
@@ -150,7 +150,7 @@ void HAL_I2S_MspDeInit(I2S_HandleTypeDef* hi2s)
   }
 
 }
-void dacInitDMA(size_t blockSize){
+void dacInitDMA(){
     /* DMA controller clock enable */
   __HAL_RCC_DMA1_CLK_ENABLE();
 
@@ -161,6 +161,17 @@ void dacInitDMA(size_t blockSize){
 
 
 }
-void dacStart();
+void HAL_I2S_TxCpltCallback(I2S_HandleTypeDef *hi2s){
+
+    HAL_UART_Transmit(&huart2, "half", 4, 4000);
+}
+void HAL_I2S_TxHalfCpltCallback(I2S_HandleTypeDef *hi2s){
+  HAL_UART_Transmit(&huart2, "full", 4, 4000);
+}
 void dacStop();
-void dacFill(size_t offset);
+void dacFill(size_t offset){
+
+  for (int i = 0; i < offset; i++) {
+
+      }
+}

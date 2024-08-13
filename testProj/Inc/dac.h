@@ -3,12 +3,12 @@
 #include <stddef.h>
 #include <stdint.h>
 #include "stm32f4xx_hal.h"
-void dacInit(uint32_t sample_rate, size_t blockSize);
+#include "stm32f4xx_hal_i2s.h"
+void dacInit(uint32_t sample_rate);
 void dacInitGpio();
 void dacInitI2S(uint32_t sample_rate);
-void dacInitDMA(size_t blockSize);
-void dacStart();
+void dacInitDMA();
 void dacStop();
-void dacFill(size_t offset);
+void dacFill();
 
 #endif // DAC_H_

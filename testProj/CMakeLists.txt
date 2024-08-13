@@ -24,7 +24,7 @@ set(LINK_FLAGS -Wl,-Map=${PROJECT_SOURCE_DIR}/Build/${PROJECT_NAME}.map -static 
 set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-fno-rtti -fno-exceptions") # NO C++ RTTI and exception
 set(CMAKE_ASM_FLAGS ${CMAKE_ASM_FLAGS} "-xassembler-with-cpp")
 file(GLOB PROJECT_SRCS "${CMAKE_SOURCE_DIR}/../Nokia-LCD5110-HAL/src/*c" "${CMAKE_SOURCE_DIR}/Src/*.c" "${CMAKE_SOURCE_DIR}/Src/*.cpp" "${CMAKE_SOURCE_DIR}/Src/*.s")
-set(CMSIS_HDRS ${CMAKE_SOURCE_DIR}/../STM32CubeF4/Drivers/CMSIS/Device/ST/${HAL_DEVICE_NAME}/Include ${CMAKE_SOURCE_DIR}/../STM32CubeF4/Drivers/CMSIS/Include)
+set(CMSIS_HDRS ${CMAKE_SOURCE_DIR}/../STM32CubeF4/Drivers/CMSIS/DSP/Include/dsp ${CMAKE_SOURCE_DIR}/../STM32CubeF4/Drivers/CMSIS/DSP/Include ${CMAKE_SOURCE_DIR}/../STM32CubeF4/Drivers/CMSIS/Device/ST/${HAL_DEVICE_NAME}/Include ${CMAKE_SOURCE_DIR}/../STM32CubeF4/Drivers/CMSIS/Include)
 
 if(${USE_HAL})
 set(HAL_HDRS ${CMAKE_SOURCE_DIR}/../STM32CubeF4/Drivers/${HAL_DEVICE_NAME}_HAL_Driver/Inc Inc)

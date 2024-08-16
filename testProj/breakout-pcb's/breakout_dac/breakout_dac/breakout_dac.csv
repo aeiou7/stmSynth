@@ -1,0 +1,12 @@
+"Id";"Designator";"Footprint";"Quantity";"Designation";"Supplier and ref";
+1;"VOUT_DAC1";"PinHeader_1x08_P2.54mm_Vertical";1;"Conn_01x05";;;
+2;"dac";"SOP65P640X120-16N";1;"DAC8568ICPW";;;
+3;"opa2,opa1";"SOIC127P600X175-14N";2;"OPA4172IDR";;;
+4;"SPIPINS_DAC1,PWRPINS_DAC1";"PinHeader_1x05_P2.54mm_Vertical";2;"Conn_01x05";;;
+5;"R26,R25,R24,R23,R12,R11,R10,R9";"R_0805_2012Metric_Pad1.20x1.40mm_HandSolder";8;"220";;;
+6;"R22,R21,R20,R19,R8,R7,R6,R5";"R_0805_2012Metric_Pad1.20x1.40mm_HandSolder";8;"100k";;;
+7;"R18,R17";"R_0805_2012Metric_Pad1.20x1.40mm_HandSolder";2;"47k";;;
+8;"R16,R15,R14,R13,R4,R3,R2,R1";"R_0805_2012Metric_Pad1.20x1.40mm_HandSolder";8;"24k9";;;
+9;"C11,C10,C9,C8,C4,C3,C2,C1";"C_0805_2012Metric_Pad1.18x1.45mm_HandSolder";8;"22p";;;
+10;"C7,C5";"C_0805_2012Metric_Pad1.18x1.45mm_HandSolder";2;"100n";;;
+11;"C6";"C_0805_2012Metric_Pad1.18x1.45mm_HandSolder";1;"470n";;;

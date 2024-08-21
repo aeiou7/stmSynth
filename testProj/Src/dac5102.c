@@ -1,13 +1,13 @@
-#include"dac.h"
+#include"dac5102.h"
 extern UART_HandleTypeDef huart2;
 I2S_HandleTypeDef hi2s2;
 DMA_HandleTypeDef hdma_spi2_tx;
-void dacInit(uint32_t sample_rate){
- dacInitI2S(sample_rate);
- dacInitDMA();
+void dac5102Init(uint32_t sample_rate){
+ dac5102InitI2S(sample_rate);
+ dac5102InitDMA();
 }
 
-void dacInitI2S(uint32_t sample_rate){
+void dac5102InitI2S(uint32_t sample_rate){
 
   /* USER CODE BEGIN I2S2_Init 0 */
 
@@ -150,7 +150,7 @@ void HAL_I2S_MspDeInit(I2S_HandleTypeDef* hi2s)
   }
 
 }
-void dacInitDMA(){
+void dac5102InitDMA(){
     /* DMA controller clock enable */
   __HAL_RCC_DMA1_CLK_ENABLE();
 
@@ -158,18 +158,16 @@ void dacInitDMA(){
   /* DMA1_Stream4_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Stream4_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA1_Stream4_IRQn);
-
-
 }
+
 void HAL_I2S_TxCpltCallback(I2S_HandleTypeDef *hi2s){
-
-    HAL_UART_Transmit(&huart2, "half", 4, 4000);
-}
-void HAL_I2S_TxHalfCpltCallback(I2S_HandleTypeDef *hi2s){
   HAL_UART_Transmit(&huart2, "full", 4, 4000);
 }
-void dacStop();
-void dacFill(size_t offset){
+void HAL_I2S_TxHalfCpltCallback(I2S_HandleTypeDef *hi2s){
+    HAL_UART_Transmit(&huart2, "half", 4, 4000);
+}
+void dac5102Stop();
+void dac5102Fill(size_t offset){
 
   for (int i = 0; i < offset; i++) {
 

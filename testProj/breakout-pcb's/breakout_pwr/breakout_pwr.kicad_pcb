@@ -12381,18 +12381,6 @@
 			(justify left bottom mirror)
 		)
 	)
-	(gr_text "<3 WZL-kun <3"
-		(at 173 56 -90)
-		(layer "B.SilkS")
-		(uuid "642d2c11-b2cc-4822-895b-d55e157d8054")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.1)
-			)
-			(justify left bottom mirror)
-		)
-	)
 	(gr_text "-12"
 		(at 149.5 46.5 0)
 		(layer "B.SilkS")

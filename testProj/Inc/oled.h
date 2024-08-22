@@ -2,6 +2,8 @@
 #define OLED_H_
 #include <stdint.h>
 #include "spi.h"
+#define WIDTH 256
+#define HEIGHT 64
 void oledInit();
 void oledData(uint8_t data);
 void oledCommand(uint8_t data);

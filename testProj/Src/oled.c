@@ -71,3 +71,6 @@ void oledData(uint8_t data) {
     spi1Write(&data);
     gpioSpi1CSSet(GPIO_PIN_SET);
 }
+void oledDrawPixel{
+
+}
